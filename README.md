@@ -2,7 +2,7 @@
 
 [![N|Solid](http://gamecola.net/wp-content/uploads/2016/08/goldeneye__source_logo.jpg)](https://nodesource.com/products/nsolid)
 
-TeamArsenal is a gameplay created in pythyon for GoldenEye Source
+TeamArsenal is a gameplay coded in python for GoldenEye Source
   - How-To Install - Copy gesource contents over GE:S gesource folder on your server
   - [Client Install Guide](https://wiki.geshl2.com/goldeneye/installation)
   - [Server Install Guide](https://wiki.geshl2.com/goldeneye/server_install)
