@@ -9,7 +9,7 @@ TeamArsenal is a gameplay coded in python for GoldenEye Source
 
 Run and options:
   - Run: Change Gameplay from Server Command - "ge_gameplay TeamArsenal"
-  - Options: ar_slapsperplayer - Controls how many slapper level steals each player may have (change in: "./gesource/teamarsenal.cfg") - Server Example - "ar_slapsperplayer 1" (0 to disable slapper level steal limit)
+  - Options: ar_slapsperplayer - Controls how many slapper level steals each player may have (change in: "./gesource/teamarsenal.cfg") - Server Example - "ar_slapsperplayer 1" (0 to disable limit, unlimited level steals)
 
 TeamArsenal is an extension to Arsenal with teams, every team starts out on a level 1 weapon and advances to the next weapon per how many kills the team has (players // 2 + 1 = kills to level). Slapper kills steal levels from the other teams (limited by default to 1 steal per player)
 
