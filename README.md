@@ -13,5 +13,6 @@ Run and options:
 
 TeamArsenal is an extension to Arsenal with teams, every team starts out on a level 1 weapon and advances to the next weapon per how many kills the team has (players // 2 + 1 = kills to level). Slapper kills steal levels from the other teams (limited by default to 1 steal per player)
 
-[geshl2 website](https://wiki.geshl2.com/goldeneye/installation)
+[geshl2 website](https://www.geshl2.com)
+
 [geshl2 forums](https://forums.geshl2.com)
