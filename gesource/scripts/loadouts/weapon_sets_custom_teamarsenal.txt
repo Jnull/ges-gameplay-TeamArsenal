@@ -1,0 +1,123 @@
+"Arsenal_mhide"
+{
+	"ar_classic"
+	{
+		"print_name"	"Classic List"
+		"weight"	"0"
+		"group"		"1"
+		"weapons"
+		{
+			"0"	"GOLDEN_PP7"
+			"1"	"MOONRAKER"
+			"2"	"AUTO_SHOTGUN"
+			"3"	"PHANTOM"
+			"4"	"CMAG"
+			"5"	"KF7"
+			"6"	"PP7"
+			"7"	"KLOBB"
+		}
+	}
+	"ar_action"
+	{
+		"print_name"	"Action List"
+		"weight"	"0"
+		"group"		"2"
+		"weapons"
+		{
+			"0"	"GOLDEN_PP7"
+			"1"	"GRENADE_LAUNCHER"
+			"2"	"MOONRAKER"
+			"3"	"AR33"
+			"4"	"SHOTGUN"
+			"5"	"ZMG"
+			"6"	"KNIFE_THROWING"
+			"7"	"PP7"
+		}
+	}
+	"ar_skill"
+	{
+		"print_name"	"Skill List"
+		"weight"	"0"
+		"group"		"0"
+		"weapons"
+		{
+			"0"	"GOLDEN_GUN"
+			"1"	"ROCKET_LAUNCHER"
+			"2"	"SILVER_PP7"
+			"3"	"CMAG"
+			"4"	"KNIFE_THROWING"
+			"5"	"D5K"
+			"6"	"PP7"
+			"7"	"GRENADE"
+		}
+	}
+	"ar_dinky"
+	{
+		"print_name"	"Dinky List"
+		"weight"	"0"
+		"group"		"0"
+		"weapons"
+		{
+			"0"	"SILVER_PP7"
+			"1"	"AR33"
+			"2"	"PHANTOM"
+			"3"	"CMAG"
+			"4"	"SHOTGUN"
+			"5"	"D5K_SILENCED"
+			"6"	"DD44"
+			"7"	"KLOBB"
+		}
+	}
+	"ar_chaotic"
+	{
+		"print_name"	"Chaotic List"
+		"weight"	"0"
+		"group"		"0"
+		"weapons"
+		{
+			"0"	"GOLDEN_PP7"
+			"1"	"GRENADE_LAUNCHER"
+			"2"	"RCP90"
+			"3"	"AUTO_SHOTGUN"
+			"4"	"PHANTOM"
+			"5"	"CMAG"
+			"6"	"ZMG"
+			"7"	"GRENADE"
+		}
+	}
+	"ar_mountain"
+	{
+		"print_name"	"Mountain List"
+		"weight"	"0"
+		"group"		"0"
+		"weapons"
+		{
+			"0"	"DD44"
+			"1"	"D5K"
+			"2"	"RCP90"
+			"3"	"GOLDEN_GUN"
+			"4"	"ROCKET_LAUNCHER"
+			"5"	"SHOTGUN"
+			"6"	"DD44"
+			"7"	"PP7"
+		}
+	}
+
+	"ar_woodandsteel"
+	{
+		"print_name"	"Wood and Steel List"
+		"weight"	"0"
+		"group"		"0"
+		"weapons"
+		{
+			"0"	"RCP90"
+			"1"	"GRENADE_LAUNCHER"
+			"2"	"AUTO_SHOTGUN"
+			"3"	"CMAG"
+			"4"	"SHOTGUN"
+			"5"	"KF7"
+			"6"	"KNIFE_THROWING"
+			"7"	"KLOBB"
+		}
+	}
+}

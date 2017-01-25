@@ -1,0 +1,8 @@
+//WEAPON	WEIGHT		GROUP
+ar_classic	600		1
+ar_action	600		0
+ar_skill	600		2
+ar_dinky	400		0
+ar_chaotic	600		2
+ar_woodandsteel	400		1
+ar_mountain	50		1
