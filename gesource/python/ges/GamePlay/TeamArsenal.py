@@ -90,8 +90,8 @@ class TeamArsenal(GEScenario):
 
         self.CreateCVar("ta_warmuptime", "15", "The warmup time in seconds. (Use 0 to disable)")
         self.CreateCVar("ta_randomspawns", "1", "Random spawns enabled. (Use 0 to disable, teamspawns will be used instead)")
-        self.CreateCVar("ar_slapsperplayer", "1", "How many slapper kill steals per player allowed. (Use 0 to disable)")
-        self.CreateCVar("ar_onecharperteam", "1", "Each team is assigned one character each. (Use 0 to disable)")
+        self.CreateCVar("ta_slapsperplayer", "1", "How many slapper kill steals per player allowed. (Use 0 to disable)")
+        self.CreateCVar("ta_onecharperteam", "1", "Each team is assigned one character each. (Use 0 to disable)")
 
         # Make sure we don't start out in wait time or have a warmup if we changed gameplay mid-match
         if GERules.GetNumActivePlayers() >= 2:
@@ -102,9 +102,9 @@ class TeamArsenal(GEScenario):
         GERules.EnableInfiniteAmmo()
 
         if self.ta_randomspawns == 1:
-            GERules.SetAllowTeamSpawns(False)  #kill the other team but also find your team
+            GERules.SetAllowTeamSpawns(False)  #Random Spawns Enabled
         else:
-            GERules.SetAllowTeamSpawns(True)  #kill the other team but also find your team
+            GERules.SetAllowTeamSpawns(True)  #Team Spawns Enabled
 
         GERules.SetSpawnInvulnTime(2, True)
 
@@ -121,6 +121,10 @@ class TeamArsenal(GEScenario):
     def OnCVarChanged(self, name, oldvalue, newvalue):
         if name == "ta_randomspawns":
             self.ta_randomspawns = int(newvalue)
+            if self.ta_randomspawns == 1:
+                GERules.SetAllowTeamSpawns(False)  #Random Spawns Enabled
+            else:
+                GERules.SetAllowTeamSpawns(True)  #Team Spawns Enabled
         if name == "ta_slapsperplayer":
             self.ta_slapsperplayer = int(newvalue)
         if name == "ta_onecharperteam":

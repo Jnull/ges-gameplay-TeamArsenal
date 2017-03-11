@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90914f28-24eb-4131-92d8-39cd048f8fdf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gesource/cfg/Valve.rc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gesource/cfg/server.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gesource/cfg/server_teamarsenal.cfg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesource/cfg/teamarsenal.cfg" afterPath="$PROJECT_DIR$/gesource/cfg/teamarsenal.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesource/gameplaycycle.txt" afterPath="$PROJECT_DIR$/gesource/gameplaycycle.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gesource/python/ges/GamePlay/TeamArsenal.py" afterPath="$PROJECT_DIR$/gesource/python/ges/GamePlay/TeamArsenal.py" />
     </list>
     <ignored path="ges-gameplay-TeamArsenal.iws" />
@@ -30,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TeamArsenal.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TeamArsenal.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gesource/python/ges/GamePlay/TeamArsenal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1132076">
-              <caret line="55" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4353147">
+              <caret line="350" column="39" selection-start-line="350" selection-start-column="39" selection-end-line="350" selection-end-column="39" />
               <folding>
                 <element signature="e#919#943#0" expanded="true" />
               </folding>
@@ -42,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeamArsenal.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TeamArsenal.py" pinned="false" current-in-tab="false">
         <entry file="file://D:/GES_Server/gesource/python/ges/GamePlay/TeamArsenal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43174604">
-              <caret line="309" column="20" selection-start-line="309" selection-start-column="20" selection-end-line="309" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="98" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
               <folding>
                 <element signature="e#919#943#0" expanded="true" />
               </folding>
@@ -127,10 +121,10 @@
         <option value="Z:/Games/GoldenEye_Source/Server/Gameplays/Team_Arsenal(fully Loaded Slappers)/gesource/python/ges/GamePlay/TeamArsenal.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$USER_HOME$/Desktop/Server/gesource/python/ges/GamePlay/TeamArsenal.py" />
-        <option value="$PROJECT_DIR$/gesource/python/ges/GamePlay/TeamArsenal.py" />
         <option value="$PROJECT_DIR$/gesource/cfg/teamarsenal.cfg" />
         <option value="$PROJECT_DIR$/gesource/gameplaycycle.txt" />
         <option value="D:/GES_Server/gesource/python/ges/GamePlay/TeamArsenal.py" />
+        <option value="$PROJECT_DIR$/gesource/python/ges/GamePlay/TeamArsenal.py" />
       </list>
     </option>
   </component>
@@ -499,7 +493,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32955715" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -703,16 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gesource/python/ges/GamePlay/TeamArsenal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1132076">
-          <caret line="55" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
-          <folding>
-            <element signature="e#919#943#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gesource/cfg/teamarsenal.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -723,8 +707,18 @@
     </entry>
     <entry file="file://D:/GES_Server/gesource/python/ges/GamePlay/TeamArsenal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43174604">
-          <caret line="309" column="20" selection-start-line="309" selection-start-column="20" selection-end-line="309" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
+          <folding>
+            <element signature="e#919#943#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gesource/python/ges/GamePlay/TeamArsenal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4353147">
+          <caret line="350" column="39" selection-start-line="350" selection-start-column="39" selection-end-line="350" selection-end-column="39" />
           <folding>
             <element signature="e#919#943#0" expanded="true" />
           </folding>
