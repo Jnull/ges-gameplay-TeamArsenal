@@ -88,7 +88,8 @@ class TeamArsenal(GEScenario):
         GEUtil.PrecacheSound("GEGamePlay.Level_Down")  # Plays when level is lost
         #GEUtil.PrecacheSound("GEPlayer.Slapper")  # Plays when someone gets slapped
 
-        self.CreateCVar("ar_warmuptime", "15", "The warmup time in seconds. (Use 0 to disable)")
+        self.CreateCVar("ta_warmuptime", "15", "The warmup time in seconds. (Use 0 to disable)")
+        self.CreateCVar("ta_randomspawns", "1", "Random spawns enabled. (Use 0 to disable, teamspawns will be used instead)")
         self.CreateCVar("ar_slapsperplayer", "1", "How many slapper kill steals per player allowed. (Use 0 to disable)")
         self.CreateCVar("ar_onecharperteam", "1", "Each team is assigned one character each. (Use 0 to disable)")
 
@@ -99,7 +100,12 @@ class TeamArsenal(GEScenario):
 
         GERules.EnableSuperfluousAreas()
         GERules.EnableInfiniteAmmo()
-        GERules.SetAllowTeamSpawns(False)  #kill the other team but also find your team
+
+        if self.ta_randomspawns == 1:
+            GERules.SetAllowTeamSpawns(False)  #kill the other team but also find your team
+        else:
+            GERules.SetAllowTeamSpawns(True)  #kill the other team but also find your team
+
         GERules.SetSpawnInvulnTime(2, True)
 
         #for when round hasn't begun, we need to set the team lvls when theres only 1 person
@@ -113,11 +119,13 @@ class TeamArsenal(GEScenario):
         self.TEAM_SCORES = None
 
     def OnCVarChanged(self, name, oldvalue, newvalue):
-        if name == "ar_slapsperplayer":
-            self.ar_slapsperplayer = int(newvalue)
-        if name == "ar_onecharperteam":
-            self.ar_onecharperteam = int(newvalue)
-        elif name == "ar_warmuptime":
+        if name == "ta_randomspawns":
+            self.ta_randomspawns = int(newvalue)
+        if name == "ta_slapsperplayer":
+            self.ta_slapsperplayer = int(newvalue)
+        if name == "ta_onecharperteam":
+            self.ta_onecharperteam = int(newvalue)
+        elif name == "ta_warmuptime":
             if self.warmupTimer.IsInWarmup():
                 val = int(newvalue)
                 self.warmupTimer.StartWarmup(val)
@@ -129,6 +137,12 @@ class TeamArsenal(GEScenario):
         GERules.DisableWeaponSpawns()
         GERules.DisableAmmoSpawns()
         GERules.DisableArmorSpawns()
+
+        if self.ta_randomspawns == 1:
+            GERules.SetAllowTeamSpawns(False)  #kill the other team but also find your team
+        else:
+            GERules.SetAllowTeamSpawns(True)  #kill the other team but also find your team
+
         self.weaponList = []  # Clear our weapon list
         # Store all the current weaponset's weapons in a list for easy access.
         for i in range(0, 8):
@@ -171,9 +185,9 @@ class TeamArsenal(GEScenario):
 
     def OnPlayerSpawn(self, player):
         #one character per team
-        if player and player.GetTeamNumber() == Glb.TEAM_JANUS and not player.GetPlayerModel().lower() == self.TEAM_SCORES[Glb.TEAM_JANUS]['random_char'] and self.ar_onecharperteam == 1:
+        if player and player.GetTeamNumber() == Glb.TEAM_JANUS and not player.GetPlayerModel().lower() == self.TEAM_SCORES[Glb.TEAM_JANUS]['random_char'] and self.ta_onecharperteam == 1:
             player.SetPlayerModel(self.TEAM_SCORES[Glb.TEAM_JANUS]['random_char'], 0)
-        if player and player.GetTeamNumber() == Glb.TEAM_MI6 and not player.GetPlayerModel().lower() == self.TEAM_SCORES[Glb.TEAM_MI6]['random_char'] and self.ar_onecharperteam == 1:
+        if player and player.GetTeamNumber() == Glb.TEAM_MI6 and not player.GetPlayerModel().lower() == self.TEAM_SCORES[Glb.TEAM_MI6]['random_char'] and self.ta_onecharperteam == 1:
             player.SetPlayerModel(self.TEAM_SCORES[Glb.TEAM_MI6]['random_char'], 0)
         if not self.WaitingForPlayers and not self.warmupTimer.IsInWarmup():
             if player.IsInitialSpawn():
@@ -192,12 +206,12 @@ class TeamArsenal(GEScenario):
         else:
             if name == "weapon_slappers" or name == "player":  # Slappers kill
                 if vL > 0: #Victims Team Level is greater than zero
-                    if self.ar_slapsperplayer == 0 or self.ar_slapsperplayer != 0 and self.pltracker[killer][TR_SLAPPERKILLS] < self.ar_slapsperplayer:  # if slaps per player limit is 0: disabled (unlimited slaps) or less than slapsperplayer threshhold
+                    if self.ta_slapsperplayer == 0 or self.ta_slapsperplayer != 0 and self.pltracker[killer][TR_SLAPPERKILLS] < self.ta_slapsperplayer:  # if slaps per player limit is 0: disabled (unlimited slaps) or less than slapsperplayer threshhold
                         self.pltracker[killer][TR_SLAPPERKILLS] = self.pltracker[killer][TR_SLAPPERKILLS] + 1 #increment slap per player
                         self.ar_IncrementLevel(victim, -1)
                         self.ar_IncrementLevel(killer, 1)  # Jump forward an entire level, keeping our kill count.
                         #GEUtil.EmitGameplayEvent("ar_levelsteal", str(killer.GetUserID()), str(victim.GetUserID()), "", "", True)  # Acheivement event
-                        if self.pltracker[killer][TR_SLAPPERKILLS] == self.ar_slapsperplayer:
+                        if self.pltracker[killer][TR_SLAPPERKILLS] == self.ta_slapsperplayer:
                             msg = _("^rYou cannot steal anymore levels!")
                             GEUtil.HudMessage(killer, msg, -1, 0.71, GEUtil.Color(220, 220, 220, 255), 3.0, 2)
                         msg = _(str(self.TEAM_SCORES[killer.GetTeamNumber()]['color']) + killer.GetCleanPlayerName() + "^l gained armor" + " and a level for Team " + str(self.TEAM_SCORES[killer.GetTeamNumber()]['color']) + str(self.TEAM_SCORES[killer.GetTeamNumber()]['name']) + "!" + "\n" + str(self.TEAM_SCORES[victim.GetTeamNumber()]['color']) + victim.GetCleanPlayerName() + " ^llost a level ^w- ^lTeam " + str(self.TEAM_SCORES[victim.GetTeamNumber()]['color']) + str(self.TEAM_SCORES[victim.GetTeamNumber()]['name']) + "!")
@@ -259,7 +273,7 @@ class TeamArsenal(GEScenario):
                 for allplayers in GetPlayers():
                     GEUtil.PlaySoundTo(allplayers, "GEGamePlay.Token_Grab_Enemy")
                     if (allplayers.GetTeamNumber() == OppositeTeam(player.GetTeamNumber())):
-                        if(self.pltracker[allplayers][TR_SLAPPERKILLS] > 0 and self.ar_slapsperplayer != 0):
+                        if(self.pltracker[allplayers][TR_SLAPPERKILLS] > 0 and self.ta_slapsperplayer != 0):
                             self.pltracker[allplayers][TR_SLAPPERKILLS] = 0  # Reset all player slaps when a team is on last level
                             msg = _("^hYour slap kills have been reset! \n ^yThe other team is on the final level^h!!")
                         else:
@@ -292,7 +306,7 @@ class TeamArsenal(GEScenario):
                 pass
                 #GERules.EndRound(False)  #do we really need this?
             else:
-                self.warmupTimer.StartWarmup(int(GEUtil.GetCVarValue("ar_warmuptime")), True)
+                self.warmupTimer.StartWarmup(int(GEUtil.GetCVarValue("ta_warmuptime")), True)
 
     def CanPlayerHaveItem(self, player, item):
         if (player.GetTeamNumber() == Glb.TEAM_SPECTATOR or player.GetTeamNumber() == Glb.TEAM_NONE):  ##not player or

@@ -3,6 +3,7 @@ ViewToAKill
 CaptureTheFlag
 DeathMatch
 Arsenal
+TeamArsenal
 DeathMatch
 LivingDaylights
 LTK
@@ -10,4 +11,4 @@ DeathMatch
 MWGG
 GunTrade
 YOLT
-Team_Arsenal
+TeamArsenal
