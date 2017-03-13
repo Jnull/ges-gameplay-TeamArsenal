@@ -89,9 +89,9 @@ class TeamArsenal(GEScenario):
         #GEUtil.PrecacheSound("GEPlayer.Slapper")  # Plays when someone gets slapped
 
         self.CreateCVar("ta_warmuptime", "15", "The warmup time in seconds. (Use 0 to disable)")
-        self.CreateCVar("ta_randomspawns", "1", "Random spawns enabled. (Use 0 to disable, teamspawns will be used instead)")
-        self.CreateCVar("ta_slapsperplayer", "1", "How many slapper kill steals per player allowed. (Use 0 to disable)")
-        self.CreateCVar("ta_onecharperteam", "1", "Each team is assigned one character each. (Use 0 to disable)")
+        self.CreateCVar("ta_randomspawns", "0", "Random spawns enabled. (Use 0 to disable, teamspawns will be used instead)")
+        self.CreateCVar("ta_slapsperplayer", "0", "How many slapper kill steals per player allowed. (Use 0 to disable)")
+        self.CreateCVar("ta_onecharperteam", "0", "Each team is assigned one character each. (Use 0 to disable)")
 
         # Make sure we don't start out in wait time or have a warmup if we changed gameplay mid-match
         if GERules.GetNumActivePlayers() >= 2:
