@@ -279,9 +279,9 @@ class TeamArsenal(GEScenario):
                     if (allplayers.GetTeamNumber() == OppositeTeam(player.GetTeamNumber())):
                         if(self.pltracker[allplayers][TR_SLAPPERKILLS] > 0 and self.ta_slapsperplayer != 0):
                             self.pltracker[allplayers][TR_SLAPPERKILLS] = 0  # Reset all player slaps when a team is on last level
-                            msg = _("^hYour slap kills have been reset! \n ^yThe other team is on the final level^h!!")
+                            msg = _("^hYour slap kills have been reset! \n ^yThe other team is on the final level")
                         else:
-                            msg = _("^yThe other team is on the final level^h!!")
+                            msg = _("^yThe other team is on the final level")
                         GEUtil.HudMessage(allplayers, msg, -1, 0.71, GEUtil.Color(220, 220, 220, 255), 3.0, 2)
 
             elif lvl > oldlvl:  # Gained a level
